@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Analog Clock</title>
+  <link rel="stylesheet" href="/static/stylesheet.css">
+
+  <script>
+    window.addEventListener('load', function () {
+      const seconds = new Date().getSeconds();
+      document.querySelector('.secondhand').style = `rotate: ${(seconds / 60) * 360}deg;`;
+
+      const minutes = new Date().getMinutes();
+      const minuteRot = ((minutes / 60) * 360) + ((seconds / 60) * 30);
+      document.querySelector('.minutehand').style = `rotate: ${minuteRot}deg;`;
+
+      const hours = new Date().getHours();
+      const hourRot = ((hours / 12) * 360) + ((minuteRot / 360) * 30);
+      document.querySelector('.hourhand').style = `rotate: ${hourRot}deg;`;
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="clockface">
+      <div class="secondhand"></div>
+      <div class="minutehand"></div>
+      <div class="hourhand"></div>
+
+      <div class="number zero">0</div>
+      <div class="number one">
+        <div class="rot-correction">1</div>
+      </div>
+      <div class="number two">
+        <div class="rot-correction">2</div>
+      </div>
+      <div class="number three">
+        <div class="rot-correction">3</div>
+      </div>
+      <div class="number four">
+        <div class="rot-correction">4</div>
+      </div>
+      <div class="number five">
+        <div class="rot-correction">5</div>
+      </div>
+      <div class="number six">
+        <div class="rot-correction">6</div>
+      </div>
+      <div class="number seven">
+        <div class="rot-correction">7</div>
+      </div>
+      <div class="number eight">
+        <div class="rot-correction">8</div>
+      </div>
+      <div class="number nine">
+        <div class="rot-correction">9</div>
+      </div>
+      <div class="number ten">
+        <div class="rot-correction">10</div>
+      </div>
+      <div class="number eleven">
+        <div class="rot-correction">11</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
